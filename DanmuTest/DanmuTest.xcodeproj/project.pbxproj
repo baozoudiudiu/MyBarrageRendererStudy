@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66BEF2EF1EF2C535003DAB5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF2EE1EF2C535003DAB5E /* main.m */; };
+		66BEF2F21EF2C535003DAB5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF2F11EF2C535003DAB5E /* AppDelegate.m */; };
+		66BEF2F51EF2C535003DAB5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF2F41EF2C535003DAB5E /* ViewController.m */; };
+		66BEF2F81EF2C535003DAB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66BEF2F61EF2C535003DAB5E /* Main.storyboard */; };
+		66BEF2FA1EF2C535003DAB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66BEF2F91EF2C535003DAB5E /* Assets.xcassets */; };
+		66BEF2FD1EF2C535003DAB5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66BEF2FB1EF2C535003DAB5E /* LaunchScreen.storyboard */; };
+		66BEF3071EF2C56B003DAB5E /* DanmuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF3061EF2C56B003DAB5E /* DanmuView.m */; };
+		66BEF3091EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66BEF3081EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg */; };
+		66BEF30C1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */; };
+		F35C60780873F9CC2FB6F383 /* libPods-DanmuTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D3741CBD5DF4AAD18F0888 /* libPods-DanmuTest.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		194A60120D63435DD1049E49 /* Pods-DanmuTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanmuTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DanmuTest/Pods-DanmuTest.debug.xcconfig"; sourceTree = "<group>"; };
+		54D3741CBD5DF4AAD18F0888 /* libPods-DanmuTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DanmuTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66BEF2EA1EF2C535003DAB5E /* DanmuTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanmuTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66BEF2EE1EF2C535003DAB5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66BEF2F01EF2C535003DAB5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DanmuTest/AppDelegate.h; sourceTree = "<group>"; };
+		66BEF2F11EF2C535003DAB5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DanmuTest/AppDelegate.m; sourceTree = "<group>"; };
+		66BEF2F31EF2C535003DAB5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		66BEF2F41EF2C535003DAB5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		66BEF2F71EF2C535003DAB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		66BEF2F91EF2C535003DAB5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66BEF2FC1EF2C535003DAB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66BEF2FE1EF2C535003DAB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66BEF3051EF2C56B003DAB5E /* DanmuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuView.h; sourceTree = "<group>"; };
+		66BEF3061EF2C56B003DAB5E /* DanmuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmuView.m; sourceTree = "<group>"; };
+		66BEF3081EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2bbabed235715b1418c7d26e9256bcee.jpg; sourceTree = "<group>"; };
+		66BEF30A1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBarrageWalkTextSprite.h; sourceTree = "<group>"; };
+		66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBarrageWalkTextSprite.m; sourceTree = "<group>"; };
+		EC957C1CD78BE0A70C98BAA2 /* Pods-DanmuTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanmuTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-DanmuTest/Pods-DanmuTest.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66BEF2E71EF2C535003DAB5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C60780873F9CC2FB6F383 /* libPods-DanmuTest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C691FF0DD3E8DD3196AFC55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54D3741CBD5DF4AAD18F0888 /* libPods-DanmuTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66BEF2E11EF2C535003DAB5E = {
+			isa = PBXGroup;
+			children = (
+				66BEF2F01EF2C535003DAB5E /* AppDelegate.h */,
+				66BEF2F11EF2C535003DAB5E /* AppDelegate.m */,
+				66BEF2EC1EF2C535003DAB5E /* DanmuTest */,
+				66BEF2EB1EF2C535003DAB5E /* Products */,
+				793C01A3D24E495F3B607312 /* Pods */,
+				3C691FF0DD3E8DD3196AFC55 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		66BEF2EB1EF2C535003DAB5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66BEF2EA1EF2C535003DAB5E /* DanmuTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66BEF2EC1EF2C535003DAB5E /* DanmuTest */ = {
+			isa = PBXGroup;
+			children = (
+				66BEF3041EF2C54F003DAB5E /* Code */,
+				66BEF2ED1EF2C535003DAB5E /* Supporting Files */,
+			);
+			path = DanmuTest;
+			sourceTree = "<group>";
+		};
+		66BEF2ED1EF2C535003DAB5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66BEF3081EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg */,
+				66BEF2F61EF2C535003DAB5E /* Main.storyboard */,
+				66BEF2F91EF2C535003DAB5E /* Assets.xcassets */,
+				66BEF2FB1EF2C535003DAB5E /* LaunchScreen.storyboard */,
+				66BEF2FE1EF2C535003DAB5E /* Info.plist */,
+				66BEF2EE1EF2C535003DAB5E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66BEF3041EF2C54F003DAB5E /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				66BEF2F31EF2C535003DAB5E /* ViewController.h */,
+				66BEF2F41EF2C535003DAB5E /* ViewController.m */,
+				66BEF30A1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.h */,
+				66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */,
+				66BEF3051EF2C56B003DAB5E /* DanmuView.h */,
+				66BEF3061EF2C56B003DAB5E /* DanmuView.m */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		793C01A3D24E495F3B607312 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				194A60120D63435DD1049E49 /* Pods-DanmuTest.debug.xcconfig */,
+				EC957C1CD78BE0A70C98BAA2 /* Pods-DanmuTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66BEF2E91EF2C535003DAB5E /* DanmuTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66BEF3011EF2C535003DAB5E /* Build configuration list for PBXNativeTarget "DanmuTest" */;
+			buildPhases = (
+				84D0FAAEBB68F3C2E1F0FFF0 /* [CP] Check Pods Manifest.lock */,
+				66BEF2E61EF2C535003DAB5E /* Sources */,
+				66BEF2E71EF2C535003DAB5E /* Frameworks */,
+				66BEF2E81EF2C535003DAB5E /* Resources */,
+				D73840ADBC319AAC0A94FF0A /* [CP] Embed Pods Frameworks */,
+				2E6BE953ECF6F51BBD4772D2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DanmuTest;
+			productName = DanmuTest;
+			productReference = 66BEF2EA1EF2C535003DAB5E /* DanmuTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66BEF2E21EF2C535003DAB5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = ChenWang;
+				TargetAttributes = {
+					66BEF2E91EF2C535003DAB5E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 66BEF2E51EF2C535003DAB5E /* Build configuration list for PBXProject "DanmuTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66BEF2E11EF2C535003DAB5E;
+			productRefGroup = 66BEF2EB1EF2C535003DAB5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66BEF2E91EF2C535003DAB5E /* DanmuTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66BEF2E81EF2C535003DAB5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BEF3091EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg in Resources */,
+				66BEF2FD1EF2C535003DAB5E /* LaunchScreen.storyboard in Resources */,
+				66BEF2FA1EF2C535003DAB5E /* Assets.xcassets in Resources */,
+				66BEF2F81EF2C535003DAB5E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E6BE953ECF6F51BBD4772D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DanmuTest/Pods-DanmuTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D0FAAEBB68F3C2E1F0FFF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D73840ADBC319AAC0A94FF0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DanmuTest/Pods-DanmuTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66BEF2E61EF2C535003DAB5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BEF2F51EF2C535003DAB5E /* ViewController.m in Sources */,
+				66BEF2F21EF2C535003DAB5E /* AppDelegate.m in Sources */,
+				66BEF3071EF2C56B003DAB5E /* DanmuView.m in Sources */,
+				66BEF2EF1EF2C535003DAB5E /* main.m in Sources */,
+				66BEF30C1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		66BEF2F61EF2C535003DAB5E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66BEF2F71EF2C535003DAB5E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		66BEF2FB1EF2C535003DAB5E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66BEF2FC1EF2C535003DAB5E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66BEF2FF1EF2C535003DAB5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66BEF3001EF2C535003DAB5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66BEF3021EF2C535003DAB5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 194A60120D63435DD1049E49 /* Pods-DanmuTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DanmuTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenwang.DanmuTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66BEF3031EF2C535003DAB5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC957C1CD78BE0A70C98BAA2 /* Pods-DanmuTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DanmuTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenwang.DanmuTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66BEF2E51EF2C535003DAB5E /* Build configuration list for PBXProject "DanmuTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66BEF2FF1EF2C535003DAB5E /* Debug */,
+				66BEF3001EF2C535003DAB5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66BEF3011EF2C535003DAB5E /* Build configuration list for PBXNativeTarget "DanmuTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66BEF3021EF2C535003DAB5E /* Debug */,
+				66BEF3031EF2C535003DAB5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66BEF2E21EF2C535003DAB5E /* Project object */;
+}

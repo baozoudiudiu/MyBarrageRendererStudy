@@ -1,0 +1,5 @@
+platform:ios, '8.0'
+
+target "DanmuTest" do
+	pod 'BarrageRenderer', '~> 1.9.1'
+end

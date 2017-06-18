@@ -8,13 +8,20 @@
 
 #import "ViewController.h"
 #import <BarrageRenderer.h>
-#import "MyBarrageWalkTextSprite.h"
 
-@interface ViewController ()
+
+#import "MyBarrageWalkTextSprite.h"
+#import "MyBarrageFloatTextSprite.h"
+
+//View
+#import "BarrageSenderView.h"
+
+@interface ViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) BarrageRenderer           *renderer;
 @property (nonatomic, strong) NSTimer                   *timer;
 
+@property (nonatomic, strong) BarrageSenderView         *senderView;
 @end
 
 @implementation ViewController
@@ -27,6 +34,8 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25f target:self selector:@selector(autoSenderDanmu) userInfo:nil repeats:YES];
     [self.timer setFireDate:[NSDate distantFuture]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChanged:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
 
@@ -35,6 +44,8 @@
     [self.timer setFireDate:[NSDate distantFuture]];
     [self.timer invalidate];
     self.timer = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 #pragma mark -
 #pragma mark - --事件响应
@@ -67,7 +78,7 @@
         case 3:
         {
             //发送弹幕
-            
+            [self startSenderBarrage];
         }
             break;
         default:
@@ -78,7 +89,7 @@
 ///弹幕数据模拟
 - (void)autoSenderDanmu {
     
-    NSArray *types = @[@(0), @(1), @(2)];
+    NSArray *types = @[@(0), @(1), @(2), @(3)];
     
     NSNumber *t = types[arc4random()%types.count];
     
@@ -89,11 +100,12 @@
             break;
         case 1:
             //顶部悬浮
-            [self.renderer receive:[self walkTextSpriteDescriptorWithDirection:BarrageWalkDirectionR2L side:BarrageWalkSideDefault]];
+            [self.renderer receive:[self floatTextSpriteDescriptorWithDirection:BarrageFloatDirectionT2B side:BarrageFloatSideCenter]];
             break;
         case 2:
             //底部悬浮
-            [self.renderer receive:[self walkTextSpriteDescriptorWithDirection:BarrageWalkDirectionR2L side:BarrageWalkSideDefault]];
+//            [self.renderer receive:[self walkTextSpriteDescriptorWithDirection:BarrageWalkDirectionR2L side:BarrageWalkSideDefault]];
+            [self.renderer receive:[self floatTextSpriteDescriptorWithDirection:BarrageWalkDirectionB2T side:BarrageFloatSideCenter]];
             break;
         default:
             break;
@@ -111,6 +123,7 @@
     descriptor.params[@"speed"] = @(100 * (double)random()/RAND_MAX+50);
     descriptor.params[@"direction"] = @(direction);
     descriptor.params[@"side"] = @(side);
+    descriptor.params[@"fontSize"] = @(21);
 //    descriptor.params[@"clickAction"] = ^{
 //        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"弹幕被点击" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
 //        [alertView show];
@@ -118,7 +131,22 @@
     return descriptor;
 }
 
-
+/// 生成精灵描述 - 浮动文字弹幕
+- (BarrageDescriptor *)floatTextSpriteDescriptorWithDirection:(NSInteger)direction side:(BarrageFloatSide)side
+{
+    static NSInteger index = 0;
+    
+    BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
+    descriptor.spriteName = NSStringFromClass([MyBarrageFloatTextSprite class]);
+    descriptor.params[@"text"] = [NSString stringWithFormat:@"悬浮文字弹幕:%ld",(long)index++];
+    descriptor.params[@"textColor"] = [UIColor purpleColor];
+    descriptor.params[@"duration"] = @(3);
+    descriptor.params[@"fadeInTime"] = @(1);
+    descriptor.params[@"fadeOutTime"] = @(1);
+    descriptor.params[@"direction"] = @(direction);
+    descriptor.params[@"side"] = @(side);
+    return descriptor;
+}
 
 #pragma mark -
 #pragma mark - --Configure UI
@@ -135,21 +163,75 @@
     self.renderer = [[BarrageRenderer alloc] init];
     [imageView addSubview:_renderer.view];
     
-    _renderer.canvasMargin = UIEdgeInsetsMake(40, 40, CGRectGetHeight(imageView.frame) - 40 - 200, 40);
+//    _renderer.canvasMargin = UIEdgeInsetsMake(40, 40, CGRectGetHeight(imageView.frame) - 40 - 200, 40);
+    _renderer.canvasMargin = UIEdgeInsetsZero;
     _renderer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [imageView sendSubviewToBack:_renderer.view];
 }
 
 #pragma mark -
+#pragma mark - -- < TextFieldDelegate >
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self stopSenderBarrage];
+    
+    return YES;
+}
+
+#pragma mark -
+#pragma mark - -- < Logic Helper >
+- (void)startSenderBarrage {
+    
+    [self.senderView.textField becomeFirstResponder];
+}
+
+- (void)keyboardChanged:(NSNotification *)notify {
+    
+    CGRect frame = [[notify.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat reduce = CGRectGetHeight([UIScreen mainScreen].bounds) - frame.origin.y;
+    
+    if(reduce > 0)
+        reduce += 70;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        self.senderView.transform = CGAffineTransformMakeTranslation(0, -reduce);
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)stopSenderBarrage {
+    
+    [self.senderView.textField resignFirstResponder];
+    
+    if(self.senderView.textField.text != nil
+       && ![self.senderView.textField.text isEqualToString:@""]
+       && self.senderView.textField.text.length > 0) {
+        
+        
+    }
+}
+#pragma mark -
 #pragma mark - < Lazy Loading >
-//- (BarrageRenderer *)renderer {
-//    
-//    if(!_renderer)
-//    {
-//        
-//    }
-//    return _renderer;
-//}
+- (BarrageSenderView *)senderView {
+    
+    if(!_senderView) {
+        
+        CGFloat height = 70;
+        
+        self.senderView = [[BarrageSenderView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds), CGRectGetWidth([UIScreen mainScreen].bounds), height)];
+        
+        _senderView.textField.delegate = self;
+        
+        [self.view addSubview:_senderView];
+        
+        _senderView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    }
+    return _senderView;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

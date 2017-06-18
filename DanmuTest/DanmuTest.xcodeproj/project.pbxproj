@@ -16,6 +16,10 @@
 		66BEF3071EF2C56B003DAB5E /* DanmuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF3061EF2C56B003DAB5E /* DanmuView.m */; };
 		66BEF3091EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66BEF3081EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg */; };
 		66BEF30C1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */; };
+		66F80E7D1EF611E80060409C /* MyBarrageFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F80E7C1EF611E80060409C /* MyBarrageFloatTextSprite.m */; };
+		66F80E821EF623FA0060409C /* BarrageSenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F80E811EF623FA0060409C /* BarrageSenderView.m */; };
+		66F80E841EF6241B0060409C /* BarrageSenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66F80E831EF6241B0060409C /* BarrageSenderView.xib */; };
+		66F80E871EF62FED0060409C /* MySenderWalkTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F80E861EF62FED0060409C /* MySenderWalkTextSprite.m */; };
 		F35C60780873F9CC2FB6F383 /* libPods-DanmuTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D3741CBD5DF4AAD18F0888 /* libPods-DanmuTest.a */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +39,15 @@
 		66BEF3051EF2C56B003DAB5E /* DanmuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuView.h; sourceTree = "<group>"; };
 		66BEF3061EF2C56B003DAB5E /* DanmuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmuView.m; sourceTree = "<group>"; };
 		66BEF3081EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2bbabed235715b1418c7d26e9256bcee.jpg; sourceTree = "<group>"; };
-		66BEF30A1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBarrageWalkTextSprite.h; sourceTree = "<group>"; };
-		66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBarrageWalkTextSprite.m; sourceTree = "<group>"; };
+		66BEF30A1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyBarrageWalkTextSprite.h; path = ../Code/MyBarrageWalkTextSprite.h; sourceTree = "<group>"; };
+		66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyBarrageWalkTextSprite.m; path = ../Code/MyBarrageWalkTextSprite.m; sourceTree = "<group>"; };
+		66F80E7B1EF611E80060409C /* MyBarrageFloatTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyBarrageFloatTextSprite.h; path = ../Code/MyBarrageFloatTextSprite.h; sourceTree = "<group>"; };
+		66F80E7C1EF611E80060409C /* MyBarrageFloatTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyBarrageFloatTextSprite.m; path = ../Code/MyBarrageFloatTextSprite.m; sourceTree = "<group>"; };
+		66F80E801EF623FA0060409C /* BarrageSenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageSenderView.h; sourceTree = "<group>"; };
+		66F80E811EF623FA0060409C /* BarrageSenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageSenderView.m; sourceTree = "<group>"; };
+		66F80E831EF6241B0060409C /* BarrageSenderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarrageSenderView.xib; sourceTree = "<group>"; };
+		66F80E851EF62FED0060409C /* MySenderWalkTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySenderWalkTextSprite.h; sourceTree = "<group>"; };
+		66F80E861EF62FED0060409C /* MySenderWalkTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySenderWalkTextSprite.m; sourceTree = "<group>"; };
 		EC957C1CD78BE0A70C98BAA2 /* Pods-DanmuTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanmuTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-DanmuTest/Pods-DanmuTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +94,8 @@
 		66BEF2EC1EF2C535003DAB5E /* DanmuTest */ = {
 			isa = PBXGroup;
 			children = (
+				66F80E7F1EF623BA0060409C /* View */,
+				66F80E7E1EF6173B0060409C /* Sprite */,
 				66BEF3041EF2C54F003DAB5E /* Code */,
 				66BEF2ED1EF2C535003DAB5E /* Supporting Files */,
 			);
@@ -107,12 +120,33 @@
 			children = (
 				66BEF2F31EF2C535003DAB5E /* ViewController.h */,
 				66BEF2F41EF2C535003DAB5E /* ViewController.m */,
-				66BEF30A1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.h */,
-				66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */,
 				66BEF3051EF2C56B003DAB5E /* DanmuView.h */,
 				66BEF3061EF2C56B003DAB5E /* DanmuView.m */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		66F80E7E1EF6173B0060409C /* Sprite */ = {
+			isa = PBXGroup;
+			children = (
+				66F80E7B1EF611E80060409C /* MyBarrageFloatTextSprite.h */,
+				66F80E7C1EF611E80060409C /* MyBarrageFloatTextSprite.m */,
+				66BEF30A1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.h */,
+				66BEF30B1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m */,
+				66F80E851EF62FED0060409C /* MySenderWalkTextSprite.h */,
+				66F80E861EF62FED0060409C /* MySenderWalkTextSprite.m */,
+			);
+			path = Sprite;
+			sourceTree = "<group>";
+		};
+		66F80E7F1EF623BA0060409C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66F80E801EF623FA0060409C /* BarrageSenderView.h */,
+				66F80E811EF623FA0060409C /* BarrageSenderView.m */,
+				66F80E831EF6241B0060409C /* BarrageSenderView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		793C01A3D24E495F3B607312 /* Pods */ = {
@@ -188,6 +222,7 @@
 				66BEF3091EF2D3FE003DAB5E /* 2bbabed235715b1418c7d26e9256bcee.jpg in Resources */,
 				66BEF2FD1EF2C535003DAB5E /* LaunchScreen.storyboard in Resources */,
 				66BEF2FA1EF2C535003DAB5E /* Assets.xcassets in Resources */,
+				66F80E841EF6241B0060409C /* BarrageSenderView.xib in Resources */,
 				66BEF2F81EF2C535003DAB5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,8 +285,11 @@
 				66BEF2F51EF2C535003DAB5E /* ViewController.m in Sources */,
 				66BEF2F21EF2C535003DAB5E /* AppDelegate.m in Sources */,
 				66BEF3071EF2C56B003DAB5E /* DanmuView.m in Sources */,
+				66F80E821EF623FA0060409C /* BarrageSenderView.m in Sources */,
 				66BEF2EF1EF2C535003DAB5E /* main.m in Sources */,
+				66F80E871EF62FED0060409C /* MySenderWalkTextSprite.m in Sources */,
 				66BEF30C1EF2DE31003DAB5E /* MyBarrageWalkTextSprite.m in Sources */,
+				66F80E7D1EF611E80060409C /* MyBarrageFloatTextSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

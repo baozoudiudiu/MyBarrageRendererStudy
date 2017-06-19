@@ -106,8 +106,7 @@
             break;
         case 2:
             //底部悬浮
-//            [self.renderer receive:[self walkTextSpriteDescriptorWithDirection:BarrageWalkDirectionR2L side:BarrageWalkSideDefault]];
-            [self.renderer receive:[self floatTextSpriteDescriptorWithDirection:BarrageWalkDirectionB2T side:BarrageFloatSideCenter]];
+            [self.renderer receive:[self floatTextSpriteDescriptorWithDirection:BarrageFloatDirectionB2T side:BarrageFloatSideCenter]];
             break;
         default:
             break;
@@ -120,12 +119,15 @@
     
     BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
     descriptor.spriteName = NSStringFromClass([MyBarrageWalkTextSprite class]);
-    descriptor.params[@"text"] = [NSString stringWithFormat:@"过场文字弹幕:%ld",index++];
+    NSString *string = [NSString stringWithFormat:@"过场文字弹幕:%ld",index++];
+    descriptor.params[@"text"] = string;
     descriptor.params[@"textColor"] = [UIColor blueColor];
-    descriptor.params[@"speed"] = @(100 * (double)random()/RAND_MAX+50);
+    descriptor.params[@"speed"] = @([self caculateSpeedWithContent:string font:21]);
     descriptor.params[@"direction"] = @(direction);
     descriptor.params[@"side"] = @(side);
     descriptor.params[@"fontSize"] = @(21);
+//    @property(nonatomic,assign)CGFloat borderWidth;
+//    @property(nonatomic,strong)UIColor * borderColor;
 //    descriptor.params[@"clickAction"] = ^{
 //        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"弹幕被点击" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
 //        [alertView show];
@@ -145,8 +147,8 @@
     descriptor.params[@"text"] = [NSString stringWithFormat:@"悬浮文字弹幕:%ld",(long)index++];
     descriptor.params[@"textColor"] = color;
     descriptor.params[@"duration"] = @(3);
-    descriptor.params[@"fadeInTime"] = @(1);
-    descriptor.params[@"fadeOutTime"] = @(1);
+    descriptor.params[@"fadeInTime"] = @(0);
+    descriptor.params[@"fadeOutTime"] = @(0);
     descriptor.params[@"direction"] = @(direction);
     descriptor.params[@"side"] = @(side);
     return descriptor;
@@ -167,7 +169,6 @@
     self.renderer = [[BarrageRenderer alloc] init];
     [imageView addSubview:_renderer.view];
     
-//    _renderer.canvasMargin = UIEdgeInsetsMake(40, 40, CGRectGetHeight(imageView.frame) - 40 - 200, 40);
     _renderer.canvasMargin = UIEdgeInsetsZero;
     _renderer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [imageView sendSubviewToBack:_renderer.view];
@@ -220,13 +221,16 @@
         if(self.senderView.barrageStyle == SendBarrageTypeRightToLeft) {
             
             
-            descriptor.spriteName = NSStringFromClass([MySenderWalkTextSprite class]);
+            descriptor.spriteName = NSStringFromClass([MyBarrageWalkTextSprite class]);
             descriptor.params[@"text"] = self.senderView.textField.text;
             descriptor.params[@"textColor"] = self.senderView.textColor;
-            descriptor.params[@"speed"] = @(100 * (double)random()/RAND_MAX+50);
+            descriptor.params[@"speed"] = @([self caculateSpeedWithContent:self.senderView.textField.text font:17]);
             descriptor.params[@"direction"] = @(BarrageWalkDirectionR2L);
             descriptor.params[@"side"] = @(0);
             descriptor.params[@"font"] = @(17);
+            descriptor.params[@"borderColor"] = [UIColor blueColor];
+            descriptor.params[@"borderWidth"] = @(1);
+            descriptor.params[@"cornerRadius"] = @(2);
             
         }else {
             
@@ -247,15 +251,28 @@
     UIColor *color = deriction == BarrageFloatDirectionT2B ? [UIColor redColor] : [UIColor purpleColor];
     
     BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
-    descriptor.spriteName = NSStringFromClass([MySenderFloatTextSprite class]);
+    descriptor.spriteName = NSStringFromClass([MyBarrageFloatTextSprite class]);
     descriptor.params[@"text"] = text;
     descriptor.params[@"textColor"] = color;
     descriptor.params[@"duration"] = @(3);
-    descriptor.params[@"fadeInTime"] = @(1);
-    descriptor.params[@"fadeOutTime"] = @(1);
+    descriptor.params[@"fadeInTime"] = @(0);
+    descriptor.params[@"fadeOutTime"] = @(0);
     descriptor.params[@"direction"] = @(deriction);
     descriptor.params[@"side"] = @(0);
+    descriptor.params[@"borderColor"] = [UIColor blueColor];
+    descriptor.params[@"borderWidth"] = @(1);
+    descriptor.params[@"cornerRadius"] = @(2);
     return descriptor;
+}
+
+- (CGFloat)caculateSpeedWithContent:(NSString *)string font:(CGFloat)fontSize {
+    
+    CGFloat stringLength = [string sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:fontSize]}].width;
+    CGFloat totalWidth = CGRectGetWidth(self.view.bounds) + stringLength;
+    
+    CGFloat speed = totalWidth / 5.0;
+    
+    return speed;
 }
 
 #pragma mark -

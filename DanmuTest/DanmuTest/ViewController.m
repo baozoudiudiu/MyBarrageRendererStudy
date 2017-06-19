@@ -37,6 +37,7 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25f target:self selector:@selector(autoSenderDanmu) userInfo:nil repeats:YES];
     [self.timer setFireDate:[NSDate distantFuture]];
     
+    //键盘弹出通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChanged:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
@@ -113,6 +114,7 @@
     }
 }
 
+///创建过长弹幕
 - (BarrageDescriptor *)walkTextSpriteDescriptorWithDirection:(BarrageWalkDirection)direction side:(BarrageWalkSide)side
 {
     static NSInteger index = 0;
@@ -156,6 +158,7 @@
 
 #pragma mark -
 #pragma mark - --Configure UI
+///配置界面
 - (void)configureUI {
     
     self.view.backgroundColor = [UIColor orangeColor];
@@ -185,11 +188,13 @@
 
 #pragma mark -
 #pragma mark - -- < Logic Helper >
+///开始发送弹幕逻辑
 - (void)startSenderBarrage {
     
     [self.senderView.textField becomeFirstResponder];
 }
 
+///键盘监听
 - (void)keyboardChanged:(NSNotification *)notify {
     
     CGRect frame = [[notify.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -208,6 +213,7 @@
     }];
 }
 
+///发送弹幕逻辑
 - (void)stopSenderBarrage {
     
     [self.senderView.textField resignFirstResponder];
@@ -246,6 +252,7 @@
     }
 }
 
+///发送浮动类型弹幕
 - (BarrageDescriptor *)senderFloatBarrage:(NSInteger)deriction text:(NSString *)text{
     
     UIColor *color = deriction == BarrageFloatDirectionT2B ? [UIColor redColor] : [UIColor purpleColor];
@@ -265,6 +272,7 @@
     return descriptor;
 }
 
+///根据弹幕内容计算弹幕速度
 - (CGFloat)caculateSpeedWithContent:(NSString *)string font:(CGFloat)fontSize {
     
     CGFloat stringLength = [string sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:fontSize]}].width;
@@ -277,6 +285,7 @@
 
 #pragma mark -
 #pragma mark - < Lazy Loading >
+///发送弹幕编辑控件
 - (BarrageSenderView *)senderView {
     
     if(!_senderView) {

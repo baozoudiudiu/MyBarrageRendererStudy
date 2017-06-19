@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660E7CCA1EF7AF0C002BFC40 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E7CC91EF7AF0C002BFC40 /* RootViewController.m */; };
+		660E7CCD1EF7B08A002BFC40 /* DelayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E7CCC1EF7B08A002BFC40 /* DelayViewController.m */; };
 		66AF2C781EF79EBD009B163A /* MySenderFloatTextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF2C771EF79EBD009B163A /* MySenderFloatTextSprite.m */; };
 		66BEF2EF1EF2C535003DAB5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF2EE1EF2C535003DAB5E /* main.m */; };
 		66BEF2F21EF2C535003DAB5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEF2F11EF2C535003DAB5E /* AppDelegate.m */; };
@@ -27,6 +29,10 @@
 /* Begin PBXFileReference section */
 		194A60120D63435DD1049E49 /* Pods-DanmuTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanmuTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DanmuTest/Pods-DanmuTest.debug.xcconfig"; sourceTree = "<group>"; };
 		54D3741CBD5DF4AAD18F0888 /* libPods-DanmuTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DanmuTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660E7CC81EF7AF0C002BFC40 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		660E7CC91EF7AF0C002BFC40 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		660E7CCB1EF7B08A002BFC40 /* DelayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayViewController.h; sourceTree = "<group>"; };
+		660E7CCC1EF7B08A002BFC40 /* DelayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelayViewController.m; sourceTree = "<group>"; };
 		66AF2C761EF79EBD009B163A /* MySenderFloatTextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySenderFloatTextSprite.h; sourceTree = "<group>"; };
 		66AF2C771EF79EBD009B163A /* MySenderFloatTextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySenderFloatTextSprite.m; sourceTree = "<group>"; };
 		66BEF2EA1EF2C535003DAB5E /* DanmuTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanmuTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +129,10 @@
 			children = (
 				66BEF2F31EF2C535003DAB5E /* ViewController.h */,
 				66BEF2F41EF2C535003DAB5E /* ViewController.m */,
+				660E7CC81EF7AF0C002BFC40 /* RootViewController.h */,
+				660E7CC91EF7AF0C002BFC40 /* RootViewController.m */,
+				660E7CCB1EF7B08A002BFC40 /* DelayViewController.h */,
+				660E7CCC1EF7B08A002BFC40 /* DelayViewController.m */,
 				66BEF3051EF2C56B003DAB5E /* DanmuView.h */,
 				66BEF3061EF2C56B003DAB5E /* DanmuView.m */,
 			);
@@ -289,9 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				66BEF2F51EF2C535003DAB5E /* ViewController.m in Sources */,
+				660E7CCD1EF7B08A002BFC40 /* DelayViewController.m in Sources */,
 				66BEF2F21EF2C535003DAB5E /* AppDelegate.m in Sources */,
 				66BEF3071EF2C56B003DAB5E /* DanmuView.m in Sources */,
 				66F80E821EF623FA0060409C /* BarrageSenderView.m in Sources */,
+				660E7CCA1EF7AF0C002BFC40 /* RootViewController.m in Sources */,
 				66AF2C781EF79EBD009B163A /* MySenderFloatTextSprite.m in Sources */,
 				66BEF2EF1EF2C535003DAB5E /* main.m in Sources */,
 				66F80E871EF62FED0060409C /* MySenderWalkTextSprite.m in Sources */,

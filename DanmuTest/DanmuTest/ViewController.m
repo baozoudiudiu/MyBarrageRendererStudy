@@ -60,6 +60,7 @@
         case 0:
         {
             //开始
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
             [self.renderer start];
             [self.timer setFireDate:[NSDate distantPast]];
         }
@@ -67,6 +68,7 @@
         case 1:
         {
             //暂停
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
             [self.renderer pause];
             [self.timer setFireDate:[NSDate distantFuture]];
         }
@@ -74,6 +76,7 @@
         case 2:
         {
             //停止
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
             [self.renderer stop];
             [self.timer setFireDate:[NSDate distantFuture]];
         }

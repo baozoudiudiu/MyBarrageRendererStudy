@@ -255,7 +255,7 @@
 ///发送浮动类型弹幕
 - (BarrageDescriptor *)senderFloatBarrage:(NSInteger)deriction text:(NSString *)text{
     
-    UIColor *color = deriction == BarrageFloatDirectionT2B ? [UIColor redColor] : [UIColor purpleColor];
+    UIColor *color = self.senderView.textColor;
     
     BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
     descriptor.spriteName = NSStringFromClass([MyBarrageFloatTextSprite class]);

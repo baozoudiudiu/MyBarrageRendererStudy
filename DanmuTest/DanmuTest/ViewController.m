@@ -12,6 +12,8 @@
 
 #import "MyBarrageWalkTextSprite.h"
 #import "MyBarrageFloatTextSprite.h"
+#import "MySenderWalkTextSprite.h"
+#import "MySenderFloatTextSprite.h"
 
 //View
 #import "BarrageSenderView.h"
@@ -136,10 +138,12 @@
 {
     static NSInteger index = 0;
     
+    UIColor *color = direction == BarrageFloatDirectionT2B ? [UIColor redColor] : [UIColor purpleColor];
+    
     BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
     descriptor.spriteName = NSStringFromClass([MyBarrageFloatTextSprite class]);
     descriptor.params[@"text"] = [NSString stringWithFormat:@"悬浮文字弹幕:%ld",(long)index++];
-    descriptor.params[@"textColor"] = [UIColor purpleColor];
+    descriptor.params[@"textColor"] = color;
     descriptor.params[@"duration"] = @(3);
     descriptor.params[@"fadeInTime"] = @(1);
     descriptor.params[@"fadeOutTime"] = @(1);
@@ -210,10 +214,50 @@
     if(self.senderView.textField.text != nil
        && ![self.senderView.textField.text isEqualToString:@""]
        && self.senderView.textField.text.length > 0) {
+        BarrageDescriptor *descriptor = [[BarrageDescriptor alloc] init];
         
         
+        if(self.senderView.barrageStyle == SendBarrageTypeRightToLeft) {
+            
+            
+            descriptor.spriteName = NSStringFromClass([MySenderWalkTextSprite class]);
+            descriptor.params[@"text"] = self.senderView.textField.text;
+            descriptor.params[@"textColor"] = self.senderView.textColor;
+            descriptor.params[@"speed"] = @(100 * (double)random()/RAND_MAX+50);
+            descriptor.params[@"direction"] = @(BarrageWalkDirectionR2L);
+            descriptor.params[@"side"] = @(0);
+            descriptor.params[@"font"] = @(17);
+            
+        }else {
+            
+            NSInteger deriction = self.senderView.barrageStyle == SendBarrageTypeTopToBottom ? BarrageFloatDirectionT2B : BarrageFloatDirectionB2T;
+            
+            descriptor = [self senderFloatBarrage:deriction text:self.senderView.textField.text];
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.renderer receive:descriptor];
+            self.senderView.textField.text = @"";
+        });
     }
 }
+
+- (BarrageDescriptor *)senderFloatBarrage:(NSInteger)deriction text:(NSString *)text{
+    
+    UIColor *color = deriction == BarrageFloatDirectionT2B ? [UIColor redColor] : [UIColor purpleColor];
+    
+    BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
+    descriptor.spriteName = NSStringFromClass([MySenderFloatTextSprite class]);
+    descriptor.params[@"text"] = text;
+    descriptor.params[@"textColor"] = color;
+    descriptor.params[@"duration"] = @(3);
+    descriptor.params[@"fadeInTime"] = @(1);
+    descriptor.params[@"fadeOutTime"] = @(1);
+    descriptor.params[@"direction"] = @(deriction);
+    descriptor.params[@"side"] = @(0);
+    return descriptor;
+}
+
 #pragma mark -
 #pragma mark - < Lazy Loading >
 - (BarrageSenderView *)senderView {

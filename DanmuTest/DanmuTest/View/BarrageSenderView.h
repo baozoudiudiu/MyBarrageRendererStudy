@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, SendBarrageType) {
+    SendBarrageTypeRightToLeft,
+    SendBarrageTypeTopToBottom,
+    SendBarrageTypeBottomToTop,
+};
+
 @interface BarrageSenderView : UIView
 
 @property (nonatomic, strong, readonly) UIColor *textColor;
-@property (nonatomic, assign, readonly) NSInteger barrageStyle;
+@property (nonatomic, assign, readonly) SendBarrageType barrageStyle;
 
 @property (nonatomic, weak) IBOutlet UITextField    *textField;
 @end

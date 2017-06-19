@@ -23,20 +23,17 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
-    
     self = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].firstObject;
-    
     frame.size.height = self.frame.size.height;
-    
     self.frame = frame;
     
     [self colorBtnSelected:self.defaultColorBtn];
     [self colorBtnSelected:self.defaultStyleBtn];
-    
     self.currentColorBtn = self.defaultColorBtn;
     self.currentStyleBtn = self.defaultStyleBtn;
     
     _textColor = [UIColor blueColor];
+    _barrageStyle = SendBarrageTypeRightToLeft;
     
     return self;
 }
